@@ -1,0 +1,125 @@
+ /* document.addEventListener("DOMContentLoaded", function () {
+        const adminData = document.getElementById("adminData");
+        const registrationList = document.getElementById("registrationList");
+    
+        // Retrieve the stored form data from local storage
+        const storedFormData = localStorage.getItem("formData");
+    
+        if (storedFormData) {
+            const formData = JSON.parse(storedFormData);
+    
+            // Display the form data
+            adminData.innerHTML = `
+                <h2>Registration Data</h2>
+                <p><strong>Program Title:</strong> ${formData.programTitle}</p>
+                <p><strong>Title:</strong> ${formData.title}</p>
+                <p><strong>First Name:</strong> ${formData.firstName}</p>
+                <p><strong>Last Name:</strong> ${formData.lastName}</p>
+                <!-- Display other fields similarly -->
+                <button class="confirm-button">Confirm</button>
+                <button class="reject-button">Reject</button>
+            `;
+        }
+    
+        // Function to retrieve and display the list of registrations
+        function displayRegistrationList() {
+            // Retrieve the previously stored registrations from local storage
+            const storedRegistrations = JSON.parse(localStorage.getItem("registrations")) || [];
+    
+            // Clear the existing list
+            registrationList.innerHTML = "";
+    
+            // Display each registration entry
+            storedRegistrations.forEach((registration, index) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <strong>Registration #${index + 1}:</strong> 
+                    Program Title: ${registration.programTitle}, 
+                    Title: ${registration.title}, 
+                    First Name: ${registration.firstName}, 
+                    Last Name: ${registration.lastName},
+                    Status: ${registration.status}
+                `;
+                registrationList.appendChild(listItem);
+            });
+        }
+    
+        // Call the function to display the registration list
+        displayRegistrationList();
+    });
+    */
+
+    const firstName =document.getElementById('firstName');
+        const lastName =document.getElementById('lastName');
+        const designation =document.getElementById('designation');
+        const companyname =document.getElementById('companyname');
+        const submit =document.getElementsByClassName('registrationForm')[0];
+        submit.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            console.log("clicked");
+        })
+
+        // Email code...
+
+        Email.send({
+            SecureToken : "8c85fc53-0ac8-4502-8f74-6d0dcaf96aac",
+            To : 'rssurya19@siesgst.ac.in',
+            From : 'suryars042@gmail.com',
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const adminData = document.getElementById("adminData");
+        const registrationList = document.getElementById("registrationList");
+    
+        // Retrieve the stored form data from local storage
+        const storedFormData = localStorage.getItem("formData");
+    
+        if (storedFormData) {
+            const formData = JSON.parse(storedFormData);
+    
+            // Display the form data
+            adminData.innerHTML = `
+                <h2>Registration Data</h2>
+                <p><strong>Program Title:</strong> ${formData.programTitle}</p>
+                <p><strong>Title:</strong> ${formData.title}</p>
+                <p><strong>First Name:</strong> ${formData.firstName}</p>
+                <p><strong>Last Name:</strong> ${formData.lastName}</p>
+                <!-- Display other fields similarly -->
+                <button class="confirm-button">Confirm</button>
+                <button class="reject-button">Reject</button>
+            `;
+        }
+    
+        // Function to retrieve and display the list of registrations
+        function displayRegistrationList() {
+            // Retrieve the previously stored registrations from local storage
+            const storedRegistrations = JSON.parse(localStorage.getItem("registrations")) || [];
+    
+            // Clear the existing list
+            registrationList.innerHTML = "";
+    
+            // Display each registration entry
+            storedRegistrations.forEach((registration, index) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <strong>Registration #${index + 1}:</strong> 
+                    Program Title: ${registration.programTitle}, 
+                    Title: ${registration.title}, 
+                    First Name: ${registration.firstName}, 
+                    Last Name: ${registration.lastName},
+                    Status: ${registration.status}
+                `;
+                registrationList.appendChild(listItem);
+            });
+        }
+    
+        // Call the function to display the registration list
+        displayRegistrationList();
+    });
+    
+    
+    

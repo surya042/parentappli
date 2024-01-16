@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="public\style.css">
+    <title>JNPA</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Organization Category</th>
+                <th>Company Name</th>
+                <th>Other Organization Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%usersList.forEach(user => {%>
+                <tr>
+                    <td><%= users.firstName %></td>
+                    <td><%= users.lastName %></td>
+                    <td><%= users.email %></td>
+                    <td><%= users.orgCategory %></td>
+                    <td><%= users.companyName %></td>
+                    <td><%= users.otherOrgCategory %></td>
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
+    <section class="header">
+        <nav>
+<a href="index.html"><img src="images/jnpaicon.png"></a>
+<div class="nav-links" id="navLinks">
+    <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+    
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin">Admin</a></li>
+        <li><a href="Registration.html">Register</a></li>
+        <li><a href="#">About Us</a></li> 
+    </ul>
+</div>
+
+<i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>      
+    
+</section>
+</body>
+</html>

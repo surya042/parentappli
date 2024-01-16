@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>JNPA</title>
+</head>
+<body>
+    <section class="header">
+        <nav>
+<a href="index.html"><img src="images/jnpaicon.png"></a>
+<div class="nav-links" id="navLinks">
+    <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+    
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin.ejs">Admin</a></li>
+        <li><a href="Registration.html">Register</a></li>
+        <li><a href="#">About Us</a></li>  
+    </ul>
+</div>
+<i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+    <!-- <div class="text-box">
+        <h1>Fill Form To Register</h1>
+        <a href="" class="hero-btn">Register</a>
+    </div>     -->
+    
+    <div class="registeration">
+        <form action="/sign_up" method="POST" > 
+        <h1>Registration Form</h1><!-- In registration.html -->
+        
+            <!-- ... (existing form fields) -->
+           
+        
+        <!-- <form id="registrationForm"> -->
+            <div>
+                <label for="programTitle">Program Title:</label>
+                <input type="text" id="programTitle" required>
+                <span>On</span>
+                <input type="date" id="programDate" required>
+                <span>(Venue)</span>
+                <input type="text" id="programVenue" required>
+            </div>
+            <div>
+                <label for="title">Title:</label>
+                <select id="title" required>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Ms.">Ms.</option>
+                </select>
+            </div>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName"  required>
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" required>
+            </div>
+            <div>
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" required>
+            </div>
+            <div>
+                <label for="orgCategory">Organization Category:</label>
+                <select id="orgCategory" name="orgCategory"  required>
+                    <option value="Customs">Customs</option>
+                    <option value="DG Shipping">DG Shipping</option>
+                    <!-- Add more options here -->
+                    <option value="others">Others (please specify)</option>
+                </select>
+                <input type="text" id="otherOrgCategory" name="otherOrgCategory" >
+            </div>
+            <div>
+                <label for="memberOfAssociation">Member of Association (If any):</label>
+                <select id="memberOfAssociation" required>
+                    <option value="CSLA">CSLA</option>
+                    <option value="MANSA">MANSA</option>
+                    <!-- Add more options here -->
+                    <option value="others">Others (please specify)</option>
+                </select>
+                <input type="text" id="otherAssociation">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button id="sendOTP">Send OTP</button>
+            </div>
+            <div>
+                <label for="otp">OTP:</label>
+                <input type="text" id="otp" name="otp" required>
+            </div>
+            
+            <div>
+                <label for="mobileNo">Mobile No.:</label>
+                <input type="tel" id="mobileNo" required>
+            </div>
+            <div>
+                <label for="attendingDay">Attending Program on:</label>
+                <select id="attendingDay" required>
+                    <option value="Day 1">Day 1</option>
+                    <option value="Day 2">Day 2</option>
+                    <option value="All">All</option>
+                </select>
+            </div>
+            <div id="confirmationMessage"></div>
+
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+    </section>
+    <script>
+        
+        // Function to show the navigation menu
+        function showMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.style.right = "0";
+        }
+
+        // Function to hide the navigation menu
+        function hideMenu() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.style.right = "-200px";
+        }
+
+        // Function to store form data (you can modify this as needed)
+        function storeFormData() {
+            // Retrieve form values
+            var confirmationMessage = document.getElementById("confirmationMessage");
+            confirmationMessage.innerHTML = "Form submitted successfully!";
+        }
+
+        // Add event listeners to show/hide menu
+        document.querySelector(".fa-bars").addEventListener("click", showMenu);
+        document.querySelector(".fa-xmark").addEventListener("click", hideMenu);
+    </script>
+</body>
+</html>
